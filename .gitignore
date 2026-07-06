@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+.pytest_cache/
+*.py[oc]
+*.log
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.env
+data/*
+!data/processed
+data/processed/*
+!data/processed/matches_clean.parquet
+mlruns/
+mlartifacts/
+node_modules/
+frontend/dist/
