@@ -4,6 +4,7 @@ from dataclasses import asdict
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from app.features.build_features import ROLE_ORDER, SIDES
@@ -12,6 +13,12 @@ from app.inference.schemas import CompletedDraftRequest
 from app.inference.schemas import SideName
 
 app = FastAPI(title="LoL Game Prediction")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://lol-game-prediction.pages.dev"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 
 class RoleSelections(BaseModel):

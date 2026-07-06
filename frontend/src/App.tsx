@@ -74,7 +74,7 @@ function App() {
   useEffect(() => {
     async function loadMetadata() {
       try {
-        const response = await fetch("/api/metadata");
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/metadata`);
         if (!response.ok) {
           throw new Error(`Metadata request failed: ${response.status}`);
         }
@@ -122,7 +122,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch("/api/predict", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, year: Number(form.year) }),
