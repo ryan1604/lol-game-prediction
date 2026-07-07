@@ -6,6 +6,8 @@ LoL Game Prediction is a local end-to-end machine learning project for predictin
 
 The project uses GOL.GG match data, cleans and normalizes it, builds draft-time-safe features, trains a LightGBM model, logs runs to MLflow, serves predictions through FastAPI, and exposes a small React frontend for submitting completed drafts.
 
+Try it here: https://lol-game-prediction.pages.dev/
+
 ## Architecture Diagram
 
 ![Architecture Diagram](/assets/architecure_diagram.png)
